@@ -871,16 +871,32 @@
                   <div class="col-md-4">
                     <div class="navcolumn" id="nav-column-first">
                       <h2>About</h2>
-                      <a class="cd-btn" href="">home</a>
-                      <a class="cd-btn" href="#basicInfo">My Story</a>
+                      <a
+                        href="javascript:void(0);"
+                        class="cd-btn"
+                        onclick="redirectToSection('#openingTexts')"
+                        >home</a
+                      >
+                      <a
+                        href="javascript:void(0);"
+                        class="cd-btn"
+                        onclick="redirectToSection('#hoveringDetails')"
+                        >My Story</a
+                      >
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="navcolumn" id="nav-column-second">
                       <h2>Work</h2>
-                      <a class="cd-btn" href="#">London Born</a>
+                      <a
+                        class="cd-btn"
+                        href="javascript:void(0);"
+                        onclick="redirectToSection('#certificateDetails')"
+                        >Certifications</a
+                      >
+                      <!-- <a class="cd-btn" href="#">London Born</a>
                       <a class="cd-btn" href="#">Subaru</a>
-                      <a class="cd-btn" href="#">Valeyo</a>
+                      <a class="cd-btn" href="#">Valeyo</a> -->
                     </div>
                   </div>
 
@@ -913,7 +929,7 @@
             </div>
 
             <!-- Opening Text -->
-            <div class="bannersplat">
+            <div id="openingTexts" class="bannersplat">
               <div class="scotty">
                 <img src="img/scotland.png" alt="scotland" />
               </div>
@@ -983,7 +999,7 @@
           <div class="wavy-g"></div>
 
           <!-- Hovering Details -->
-          <section class="about-wrapper">
+          <section id="hoveringDetails" class="about-wrapper">
             <div class="container">
               <div class="row d-flex justify-content-center">
                 <div class="col-md-10">
@@ -1130,7 +1146,7 @@
           <div class="wavy-g"></div>
           <!-- Certificates -->
 
-          <section class="certificate-wrapper">
+          <section id="certificateDetails" class="certificate-wrapper">
             <div class="container">
               <div class="work work1">
                 <!-- <div class="row d-flex align-items-center"> -->
@@ -1515,6 +1531,11 @@
           $(".overlay").removeClass("open");
         });
       });
+      function redirectToSection(redirectTo) {
+        document.querySelector(redirectTo).scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     </script>
   </body>
 </html>
