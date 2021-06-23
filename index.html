@@ -299,11 +299,11 @@
       }
       .course-icon {
         position: absolute;
-        padding-top: 5%;
+        padding: 5% 5%;
         width: auto;
         height: 100%;
-        max-height: 5rem;
-        max-width: 5rem;
+        max-height: 6rem;
+        max-width: 6rem;
       }
       .course-card-image {
         height: 100px;
@@ -315,7 +315,7 @@
         margin-top: 2%;
       }
       .course-card ul {
-        margin-top: 0.1rem;
+        margin-top: 1rem;
       }
 
       .wavy-g {
@@ -652,7 +652,19 @@
 
         border-radius: 50%;
       }
+      .menu-icon {
+        overflow: hidden;
+        position:fixed; margin:1rem 0.8rem 3rem 0.5rem; z-index: 150; right: 0%;
+        cursor: pointer;
+        animation: wave 5s linear infinite;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: #262d3a;
 
+        cursor: pointer;
+        
+      }
       .navcolumn h2 {
         text-align: left;
         display: block;
@@ -698,21 +710,27 @@
             "
           >
             <div class="logo-section">
-              <a href="#">
+              <a href="index.html">
                 <img
-                  src="img/logo.png"
-                  style="margin: 14px 0px 0px 0px"
+                  src="img/sdlogo.jpg"
+                  style="margin: 14px 0px 0px 0px; border-radius: 50%"
                   class="img-fluid"
                   alt="logo"
               /></a>
             </div>
 
-            <div class="link-section text-center d-none d-md-block d-sm-none">
+            <!-- <div class="link-section text-center d-none d-md-block d-sm-none">
               <a href="#"> about me</a>
-            </div>
+            </div> -->
 
-            <div class="copyright-section text-center">
+            <!-- <div class="copyright-section text-center">
               <p>& copy vishweb design 2020</p>
+            </div> -->
+
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
@@ -720,7 +738,7 @@
         <!----LEFT-BAR------->
 
         <!----RIGHT-BAR------->
-        <div class="right-bar-section">
+        <!-- <div class="right-bar-section">
           <div
             class="
               right-content-inner
@@ -746,6 +764,10 @@
               <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
+        </div> -->
+
+        <div class="menu-icon">
+          <span class="open-menu"><img style="padding:0.8rem 0.4rem;" src="img/menu.svg" class="img-fluid" alt="menu" /></span>
         </div>
 
         <!----RIGHT-BAR------->
@@ -1161,7 +1183,8 @@
             </div>
           </section>
 
-          <section class="work-bg">
+          <!-- Projects -->
+          <!-- <section class="work-bg">
             <div class="container">
               <div class="work work1">
                 <div class="row d-flex align-items-center">
@@ -1264,7 +1287,7 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> -->
 
           <div class="workclose">
             <img src="img/wavy2.png" class="img-fluid" alt="wavy2" />
@@ -1272,7 +1295,10 @@
 
           <section class="contact-wrapper">
             <div class="contact-text">
-              <h1>I've landed, let's <a class="cd-btn" href="#">talk</a></h1>
+              <h1>
+                We've landed.
+                <!-- let's <a class="cd-btn" href="#">talk</a> -->
+              </h1>
             </div>
 
             <div class="bannersplat">
