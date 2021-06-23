@@ -8,6 +8,8 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- Favicon / Icon -->
+    <link rel="icon" href="img/sdlogo.jpg" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -29,7 +31,9 @@
       crossorigin="anonymous"
     />
 
-    <title>Aeroplane Trip templates</title>
+    <link href="style.css" rel="stylesheet" />
+
+    <title>Sounak's Aeroplane Trip</title>
 
     <style>
       body {
@@ -560,7 +564,7 @@
       }
 
       .social-links {
-        padding-bottom: 20px;
+        padding-bottom: 1.5rem;
       }
 
       .social-links a {
@@ -570,8 +574,54 @@
       }
 
       .social-links a i {
-        font-size: 20px;
+        font-size: 30px;
         color: #4f5765;
+      }
+      .fb-hover-effect:hover {
+        color: #385898;
+      }
+      .linkedin-hover-effect:hover {
+        color: #378fe9;
+      }
+      .twitter-hover-effect:hover {
+        color: #00acee;
+      }
+      .instagram-hover-effect:hover {
+        color: #f09433;
+        color: -moz-linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        color: -webkit-linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        color: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+      }
+
+      .zomato-hobby-icon {
+        max-height: 1.5rem;
+        border-radius: 50%;
+        max-width: 1.5rem;
+      }
+      .zomato-hobby-icon:hover {
+        box-shadow: 0 4px 8px 0 rgba(250, 249, 249, 0.2);
       }
 
       .scroll-indicator {
@@ -654,7 +704,10 @@
       }
       .menu-icon {
         overflow: hidden;
-        position:fixed; margin:1rem 0.8rem 3rem 0.5rem; z-index: 150; right: 0%;
+        position: fixed;
+        margin: 1rem 0.8rem 3rem 0.5rem;
+        z-index: 150;
+        right: 0%;
         cursor: pointer;
         animation: wave 5s linear infinite;
         height: 50px;
@@ -663,7 +716,6 @@
         background-color: #262d3a;
 
         cursor: pointer;
-        
       }
       .navcolumn h2 {
         text-align: left;
@@ -697,7 +749,7 @@
   <body>
     <main>
       <div class="cd-index cd-main-content">
-        <!----LEFT-BAR------->
+        <!-- LEFT-BAR -->
 
         <div class="left-bar-section">
           <div
@@ -710,10 +762,15 @@
             "
           >
             <div class="logo-section">
-              <a href="index.html">
+              <a href="index.html" class="d-flex justify-content-center">
                 <img
                   src="img/sdlogo.jpg"
-                  style="margin: 14px 0px 0px 0px; border-radius: 50%"
+                  style="
+                    margin: 14px 0px 0px 0px;
+                    border-radius: 80%;
+                    overflow: hidden;
+                    width: 80%;
+                  "
                   class="img-fluid"
                   alt="logo"
               /></a>
@@ -728,16 +785,32 @@
             </div> -->
 
             <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/sounak.dey.142/" target="_blank"
+                ><i class="fab fa-facebook-f fb-hover-effect"></i
+              ></a>
+              <a href="#" target="_blank"
+                ><i class="fab fa-twitter twitter-hover-effect"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/uncommitedsingle/"
+                target="_blank"
+                ><i
+                  class="fab fa-instagram instagram-hover-effect"
+                  aria-hidden="true"
+                ></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/sounak-dey-ind/"
+                target="_blank"
+                ><i class="fab fa-linkedin-in linkedin-hover-effect"></i
+              ></a>
             </div>
           </div>
         </div>
 
-        <!----LEFT-BAR------->
+        <!-- LEFT-BAR -->
 
-        <!----RIGHT-BAR------->
+        <!-- RIGHT-BAR -->
         <!-- <div class="right-bar-section">
           <div
             class="
@@ -767,12 +840,18 @@
         </div> -->
 
         <div class="menu-icon">
-          <span class="open-menu"><img style="padding:0.8rem 0.4rem;" src="img/menu.svg" class="img-fluid" alt="menu" /></span>
+          <span class="open-menu"
+            ><img
+              style="padding: 0.8rem 0.4rem"
+              src="img/menu.svg"
+              class="img-fluid"
+              alt="menu"
+          /></span>
         </div>
 
-        <!----RIGHT-BAR------->
+        <!-- RIGHT-BAR -->
 
-        <!----nav------->
+        <!-- nav overlay-->
         <section class="nav-section overlay">
           <div class="close-menu">
             <svg
@@ -793,7 +872,7 @@
                     <div class="navcolumn" id="nav-column-first">
                       <h2>About</h2>
                       <a class="cd-btn" href="">home</a>
-                      <a class="cd-btn" href="">My Story</a>
+                      <a class="cd-btn" href="#basicInfo">My Story</a>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -817,8 +896,9 @@
           </div>
         </section>
 
-        <!----nav------->
+        <!-- nav overlay -->
 
+        <!-- Main Content -->
         <div class="wrapper">
           <div class="banner">
             <div class="planewrap">
@@ -832,6 +912,7 @@
               />
             </div>
 
+            <!-- Opening Text -->
             <div class="bannersplat">
               <div class="scotty">
                 <img src="img/scotland.png" alt="scotland" />
@@ -862,7 +943,7 @@
                 </h1>
               </div>
             </div>
-
+            <!-- Opening Text -->
             <div class="scroll-indicator">
               <img
                 src="img/scroll.svg"
@@ -871,7 +952,8 @@
               />
             </div>
           </div>
-          <section class="about-section">
+          <!-- Basic Info -->
+          <section id="basicInfo" class="about-section">
             <div class="container-fluid px-sm-0 p-0">
               <div class="row d-flex justify-content-center">
                 <div class="col-md-7">
@@ -896,6 +978,7 @@
               </div>
             </div>
           </section>
+          <!-- Basic Info -->
 
           <div class="wavy-g"></div>
 
@@ -1022,7 +1105,17 @@
                         <h3 class="heading">Hobbies</h3>
                         <ul class="hideme">
                           <li>Language Enthusiast</li>
-                          <li>Food Blogging</li>
+                          <li>
+                            Food Blogging
+                            <a
+                              href="https://www.zomato.com/sounaksdish/"
+                              target="_blank"
+                              ><img
+                                src="img/Zomato.ico"
+                                alt="zomato"
+                                class="zomato-hobby-icon"
+                            /></a>
+                          </li>
                           <li>Cricket</li>
                         </ul>
                       </div>
@@ -1032,6 +1125,7 @@
               </div>
             </div>
           </section>
+          <!-- Hovering Details -->
 
           <div class="wavy-g"></div>
           <!-- Certificates -->
@@ -1310,6 +1404,8 @@
             </div>
           </section>
         </div>
+
+        <!-- Main Content -->
       </div>
     </main>
 
@@ -1413,6 +1509,9 @@
         });
 
         $(".close-menu").on("click", function () {
+          $(".overlay").removeClass("open");
+        });
+        $(".navcolumn .cd-btn").on("click", function () {
           $(".overlay").removeClass("open");
         });
       });
