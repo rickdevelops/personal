@@ -733,8 +733,8 @@
         text-align: left;
         display: block;
         font-weight: 700;
-        margin-bottom: 30px;
-        font-size: 14px;
+        /* margin-bottom: 30px; */
+        font-size: 0.875rem;
         font-family: "Montserrat", sans-serif;
         letter-spacing: 2px;
         color: #01b9c2;
@@ -743,7 +743,6 @@
 
       .m-200 {
         margin-top: 20%;
-        padding-left: 30px;
       }
 
       .navcolumn p,
@@ -757,7 +756,7 @@
 
       .navcolumn a {
         font-weight: 600;
-        font-size: 30px;
+        font-size: 2rem;
         /* text-decoration: underline; */
       }
 
@@ -766,6 +765,53 @@
       a:hover {
         color: #00e5ea;
       }
+
+      @media screen and (max-width: 992px) {
+        .navcolumn{
+          overflow: hidden;
+        }
+      .navcolumn a {
+    font-weight: 300;
+        font-size: 1rem;}
+        .navcolumn h4{
+          font-size: 1rem;
+        }
+        .navcolumn h2 {
+        font-weight: 500;
+        /* margin-bottom: 30px; */
+        font-size: 0.7rem;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 1px;
+        color: #01b9c2;
+        text-transform: uppercase;
+      }
+
+  }
+
+  @media screen and (min-width: 768px) {
+    .navcolumn p{
+    font-weight: 300;
+        font-size: 0.8rem;
+        padding: 0%;}
+
+        .contact-remove-style {
+          padding: 0%;
+        }
+  }
+
+  @media screen and (min-width: 992px) {
+    .navcolumn p{
+    font-weight: 300;
+        font-size: 1rem;}
+        .social-remove-style {
+          padding-left: 1%;
+        }
+        .contact-remove-style {
+          padding-left: 1%;
+        }
+  }
+
+
     </style>
   </head>
 
@@ -895,7 +941,7 @@
             <div class="row m-200">
               <div class="col-md-12">
                 <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-md-3 col-sm-6 col-6">
                     <div class="navcolumn" id="nav-column-first">
                       <h2>About</h2>
                       <a
@@ -912,14 +958,14 @@
                       >
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 col-sm-6 col-6">
                     <div class="navcolumn" id="nav-column-second">
                       <h2>Work</h2>
                       <a
                         class="cd-btn"
                         href="javascript:void(0);"
                         onclick="redirectToSection('#certificateDetails')"
-                        >Certifications</a
+                        >Certificates</a
                       >
                       <!-- <a class="cd-btn" href="#">London Born</a>
                       <a class="cd-btn" href="#">Subaru</a>
@@ -927,7 +973,7 @@
                     </div>
                   </div>
 
-                  <div class="col-md-3">
+                  <div class="col-md-3 col-sm-10 col-10 social-remove-style" >
                     <div class="navcolumn" id="nav-column-third">
                       <h2>Social</h2>
                       <!-- Facebook -->
@@ -966,7 +1012,7 @@
                     </div>
                   </div>
 
-                  <div class="col-md-3">
+                  <div class="col-md-3 col-sm-10 col-10 contact-remove-style">
                     <div class="navcolumn" id="nav-column-fourth">
                       <h2>Contact</h2>
                       <!-- <a class="cd-btn" href="#">Let's Talk</a> -->
