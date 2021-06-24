@@ -267,6 +267,15 @@
         font-weight: 400;
       }
 
+      .location-icon {
+        color: white;
+        display: flex;
+        justify-content: space-around;
+      }
+      .location-icon i {
+        color: #00e5ea;
+      }
+
       .about-wrapper {
         padding: 70px 0px;
         width: 100%;
@@ -545,8 +554,7 @@
 
       .left-bar-section {
         left: 0;
-        opacity:0.9;
-        box-shadow: 0 0 1rem #037f81;
+        opacity: 0.8;
       }
 
       .link-section a,
@@ -571,7 +579,7 @@
 
       .social-links a {
         display: block;
-        margin: 6px 0px;
+        margin: 1.2rem 0 1.2rem 0;
         text-align: center;
       }
 
@@ -583,17 +591,41 @@
       .fb-hover-effect i:hover {
         color: #385898;
       }
+      .fb-hover-shadow:hover {
+        text-shadow: 5px 5px 2px black, 0 0 25px #037f81, 0 0 5px #037f81;
+      }
       .linkedin-hover-effect:hover,
       .linkedin-hover-effect i:hover {
         color: #378fe9;
+      }
+      .linkedin-hover-shadow:hover {
+        text-shadow: 5px 5px 2px black, 0 0 25px #037f81, 0 0 5px #037f81;
       }
       .twitter-hover-effect:hover,
       .twitter-hover-effect i:hover {
         color: #00acee;
       }
+      .twitter-hover-shadow:hover {
+        text-shadow: 5px 5px 2px black, 0 0 25px rgb(6, 106, 236),
+          0 0 5px #719cf1;
+      }
+      .github-hover-effect:hover {
+        color: #ffffff;
+      }
+      .github-hover-effect-overlay:hover,
+      .github-hover-effect-overlay i:hover {
+        color: #111111;
+      }
+      .github-hover-shadow:hover {
+        text-shadow: 5px 5px 2px black, 0 0 25px #037f81, 0 0 5px #037f81;
+      }
       .snapchat-hover-effect:hover,
       .snapchat-hover-effect i:hover {
-        color: #FFFC00;
+        color: #fffc00;
+      }
+      .snapchat-hover-shadow:hover {
+        text-shadow: 5px 5px 2px black, 0 0 25px rgb(6, 106, 236),
+          0 0 5px #719cf1;
       }
       .instagram-hover-effect:hover,
       .instagram-hover-effect i:hover {
@@ -624,7 +656,9 @@
         );
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
       }
-
+      .instagram-hover-shadow:hover {
+        text-shadow: 5px 5px 2px black, 0 0 25px #037f81, 0 0 5px #037f81;
+      }
       .zomato-hobby-icon {
         max-height: 1.5rem;
         border-radius: 50%;
@@ -724,9 +758,30 @@
         width: 50px;
         border-radius: 50%;
         background-color: #262d3a;
-        box-shadow: 0 0 1rem #026163;
+        box-shadow: 0 0 1rem #038c8f;
 
         cursor: pointer;
+      }
+      .menu-icon:hover {
+        box-shadow: 0 0 1rem #00e5ea;
+      }
+
+      .fa-bars,
+      .fa-times {
+        color: white;
+        font-size: 1.5rem;
+      }
+      .fa-bars {
+        padding: 0.8rem 0.8rem;
+      }
+      .fa-times {
+        padding: 0.58rem 0 0 0;
+        font-size: 2rem;
+      }
+
+      .fa-bars:hover,
+      .fa-times:hover {
+        color: #00e5ea;
       }
       .navcolumn {
         margin-bottom: 2rem;
@@ -768,53 +823,79 @@
       a:hover {
         color: #00e5ea;
       }
+      .my-avatar {
+        margin: 0.6rem 0px 1rem 0px;
+        border-radius: 80%;
+        overflow: hidden;
+        width: 80%;
+        max-width: 6.5rem;
+        max-height: 6.5rem;
+      }
+
+      .my-logo {
+        margin: 14px 0px 0px 0px;
+        border-radius: 80%;
+        overflow: hidden;
+        width: 80%;
+      }
+      .my-logo:hover {
+        box-shadow: 0 0 1rem #037f81;
+      }
 
       @media screen and (max-width: 992px) {
-        .navcolumn{
+        .navcolumn {
           overflow: hidden;
         }
-      .navcolumn a {
-    font-weight: 300;
-        font-size: 1rem;}
-        .navcolumn h4{
+        .navcolumn a {
+          font-weight: 300;
+          font-size: 1rem;
+        }
+        .navcolumn h4 {
           font-size: 1rem;
         }
         .navcolumn h2 {
-        font-weight: 500;
-        /* margin-bottom: 30px; */
-        font-size: 0.7rem;
-        font-family: "Montserrat", sans-serif;
-        letter-spacing: 1px;
-        color: #01b9c2;
-        text-transform: uppercase;
+          font-weight: 500;
+          /* margin-bottom: 30px; */
+          font-size: 0.7rem;
+          font-family: "Montserrat", sans-serif;
+          letter-spacing: 1px;
+          color: #01b9c2;
+          text-transform: uppercase;
+        }
       }
 
-  }
-
-  @media screen and (min-width: 768px) {
-    .navcolumn p{
-    font-weight: 300;
-        font-size: 0.8rem;
-        padding: 0%;}
-
+      @media screen and (min-width: 768px) {
+        .navcolumn p {
+          font-weight: 300;
+          font-size: 0.8rem;
+          padding: 0%;
+        }
+        .left-bar-section {
+          box-shadow: 0 0 1rem #037f81;
+        }
         .contact-remove-style {
           padding: 0%;
         }
-  }
+      }
 
-  @media screen and (min-width: 992px) {
-    .navcolumn p{
-    font-weight: 300;
-        font-size: 1rem;}
+      @media screen and (max-width: 768px) {
+        .my-logo {
+          box-shadow: 0 0 1rem #037f81;
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        .navcolumn p {
+          font-weight: 300;
+          font-size: 1rem;
+        }
         .social-remove-style {
           padding-left: 1%;
         }
         .contact-remove-style {
           padding-left: 1%;
         }
-  }
-
-
+      }
     </style>
   </head>
 
@@ -835,16 +916,7 @@
           >
             <div class="logo-section">
               <a href="index.html" class="d-flex justify-content-center">
-                <img
-                  src="img/sdlogo.jpg"
-                  style="
-                    margin: 14px 0px 0px 0px;
-                    border-radius: 80%;
-                    overflow: hidden;
-                    width: 80%;
-                  "
-                  class="img-fluid"
-                  alt="logo"
+                <img src="img/sdlogo.jpg" class="my-logo img-fluid" alt="logo"
               /></a>
             </div>
 
@@ -859,7 +931,9 @@
             <div class="social-links">
               <!-- Facebook -->
               <a href="https://www.facebook.com/sounak.dey.142/" target="_blank"
-                ><i class="fab fa-facebook-f fb-hover-effect" style="text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;"></i
+                ><i
+                  class="fab fa-facebook-f fb-hover-effect fb-hover-shadow"
+                ></i
               ></a>
               <!-- Twitter -->
               <!-- <a href="#" target="_blank"
@@ -870,7 +944,11 @@
                 href="https://www.instagram.com/uncommitedsingle/"
                 target="_blank"
                 ><i
-                  class="fab fa-instagram instagram-hover-effect"
+                  class="
+                    fab
+                    fa-instagram
+                    instagram-hover-effect instagram-hover-shadow
+                  "
                   aria-hidden="true"
                 ></i
               ></a>
@@ -878,7 +956,19 @@
               <a
                 href="https://www.linkedin.com/in/sounak-dey-ind/"
                 target="_blank"
-                ><i class="fab fa-linkedin-in linkedin-hover-effect"></i
+                ><i
+                  class="
+                    fab
+                    fa-linkedin-in
+                    linkedin-hover-effect linkedin-hover-shadow
+                  "
+                ></i
+              ></a>
+              <!-- Github -->
+              <a href="https://github.com/rickdevelops" target="_blank"
+                ><i
+                  class="fab fa-github github-hover-effect github-hover-shadow"
+                ></i
               ></a>
             </div>
           </div>
@@ -915,7 +1005,7 @@
           </div>
         </div> -->
 
-        <div class="menu-icon">
+        <!-- <div class="menu-icon">
           <span class="open-menu"
             ><img
               style="padding: 0.8rem 0.4rem"
@@ -923,14 +1013,19 @@
               class="img-fluid"
               alt="menu"
           /></span>
+        </div> -->
+
+        <div class="menu-icon">
+          <span class="open-menu"><i class="fas fa-bars"></i></span>
         </div>
 
         <!-- RIGHT-BAR -->
 
         <!-- nav overlay-->
         <section class="nav-section overlay">
-          <div class="close-menu">
-            <svg
+          <div class="menu-icon">
+            <span class="close-menu">
+              <!-- <svg
               width="23.312"
               height="23.32"
               fill="#fff"
@@ -938,7 +1033,9 @@
             >
               <path d="M945.7 989.4L10 53.8 54.3 9.4 990 945.1l-44.3 44.3z" />
               <path d="M10 946.2L945.7 10.6 990 54.9 54.3 990.6 10 946.2z" />
-            </svg>
+            </svg> -->
+              <i class="fas fa-times"></i
+            ></span>
           </div>
           <div class="container">
             <div class="row m-200">
@@ -976,7 +1073,7 @@
                     </div>
                   </div>
 
-                  <div class="col-md-3 col-sm-10 col-10 social-remove-style" >
+                  <div class="col-md-3 col-sm-10 col-10 social-remove-style">
                     <div class="navcolumn" id="nav-column-third">
                       <h2>Social</h2>
                       <!-- Facebook -->
@@ -1004,6 +1101,13 @@
                         target="_blank"
                         class="linkedin-hover-effect"
                         ><i class="fab fa-linkedin-in"></i> linkedin</a
+                      >
+                      <!-- Github -->
+                      <a
+                        href="https://www.snapchat.com/add/rickenstein"
+                        target="_blank"
+                        class="github-hover-effect-overlay"
+                        ><i class="fab fa-github"></i> github</a
                       >
                       <!-- Snapchat -->
                       <a
@@ -1096,6 +1200,22 @@
               <div class="row d-flex justify-content-center">
                 <div class="col-md-7">
                   <div class="abouttext">
+                    <img
+                      src="https://avatars.githubusercontent.com/u/31971312?v=4"
+                      class="my-avatar img-fluid"
+                      alt="avatar"
+                    />
+                    <div class="row location-icon">
+                      <div>
+                        <i class="fas fa-home"></i>
+                        <span> From Kolkata, West Bengal, India</span>
+                      </div>
+                      <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span> Currently in, Kolkata, West Bengal, India</span>
+                      </div>
+                    </div>
+
                     <h2>Hello, I'm Sounak</h2>
                     <!-- <p>
                     Vishweb Design is a channel for learning Complete Responsive website design, Creative CSS animation
@@ -1651,7 +1771,7 @@
         });
       });
       function redirectToSection(redirectTo) {
-          $(".overlay").removeClass("open");
+        $(".overlay").removeClass("open");
         document.querySelector(redirectTo).scrollIntoView({
           behavior: "smooth",
         });
