@@ -31,7 +31,7 @@
       crossorigin="anonymous"
     />
 
-    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Sounak's Aeroplane Trip</title>
 
@@ -54,7 +54,7 @@
 
       .text h1 span {
         color: white;
-        font-weight: 800;
+        font-weight: 700;
         letter-spacing: 1px;
         font-size: 9vw;
         display: inline-block;
@@ -577,16 +577,24 @@
         font-size: 30px;
         color: #4f5765;
       }
-      .fb-hover-effect:hover {
+      .fb-hover-effect:hover,
+      .fb-hover-effect i:hover {
         color: #385898;
       }
-      .linkedin-hover-effect:hover {
+      .linkedin-hover-effect:hover,
+      .linkedin-hover-effect i:hover {
         color: #378fe9;
       }
-      .twitter-hover-effect:hover {
+      .twitter-hover-effect:hover,
+      .twitter-hover-effect i:hover {
         color: #00acee;
       }
-      .instagram-hover-effect:hover {
+      .snapchat-hover-effect:hover,
+      .snapchat-hover-effect i:hover {
+        color: #FFFC00;
+      }
+      .instagram-hover-effect:hover,
+      .instagram-hover-effect i:hover {
         color: #f09433;
         color: -moz-linear-gradient(
           45deg,
@@ -717,6 +725,10 @@
 
         cursor: pointer;
       }
+      .navcolumn {
+        margin-bottom: 2rem;
+        overflow: hidden;
+      }
       .navcolumn h2 {
         text-align: left;
         display: block;
@@ -734,14 +746,25 @@
         padding-left: 30px;
       }
 
+      .navcolumn p,
+      .navcolumn h4,
       .navcolumn a {
         font-family: "Montserrat", sans-serif;
         text-align: left;
         display: block;
+        color: #fff;
+      }
+
+      .navcolumn a {
         font-weight: 600;
         font-size: 30px;
-        color: #fff;
-        text-decoration: underline;
+        /* text-decoration: underline; */
+      }
+
+      #nav-column-first,
+      #nav-column-second,
+      a:hover {
+        color: #00e5ea;
       }
     </style>
   </head>
@@ -785,12 +808,15 @@
             </div> -->
 
             <div class="social-links">
+              <!-- Facebook -->
               <a href="https://www.facebook.com/sounak.dey.142/" target="_blank"
                 ><i class="fab fa-facebook-f fb-hover-effect"></i
               ></a>
-              <a href="#" target="_blank"
+              <!-- Twitter -->
+              <!-- <a href="#" target="_blank"
                 ><i class="fab fa-twitter twitter-hover-effect"></i
-              ></a>
+              ></a> -->
+              <!-- Instagram -->
               <a
                 href="https://www.instagram.com/uncommitedsingle/"
                 target="_blank"
@@ -799,6 +825,7 @@
                   aria-hidden="true"
                 ></i
               ></a>
+              <!-- Linkedin -->
               <a
                 href="https://www.linkedin.com/in/sounak-dey-ind/"
                 target="_blank"
@@ -866,16 +893,16 @@
           </div>
           <div class="container">
             <div class="row m-200">
-              <div class="col-md-8">
+              <div class="col-md-12">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="navcolumn" id="nav-column-first">
                       <h2>About</h2>
                       <a
                         href="javascript:void(0);"
                         class="cd-btn"
                         onclick="redirectToSection('#openingTexts')"
-                        >home</a
+                        >Home</a
                       >
                       <a
                         href="javascript:void(0);"
@@ -885,7 +912,7 @@
                       >
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="navcolumn" id="nav-column-second">
                       <h2>Work</h2>
                       <a
@@ -900,10 +927,56 @@
                     </div>
                   </div>
 
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="navcolumn" id="nav-column-third">
+                      <h2>Social</h2>
+                      <!-- Facebook -->
+                      <a
+                        href="https://www.facebook.com/sounak.dey.142/"
+                        class="fb-hover-effect"
+                        target="_blank"
+                        ><i class="fab fa-facebook-f"></i> facebook</a
+                      >
+                      <!-- Twitter -->
+                      <!-- <a href="#" target="_blank" class="twitter-hover-effect"
+                            ><i class="fab fa-twitter "></i
+                      >  twitter</a> -->
+                      <!-- Instagram -->
+                      <a
+                        href="https://www.instagram.com/uncommitedsingle/"
+                        target="_blank"
+                        class="instagram-hover-effect"
+                        ><i class="fab fa-instagram" aria-hidden="true"></i>
+                        instagram</a
+                      >
+                      <!-- Linkedin -->
+                      <a
+                        href="https://www.linkedin.com/in/sounak-dey-ind/"
+                        target="_blank"
+                        class="linkedin-hover-effect"
+                        ><i class="fab fa-linkedin-in"></i> linkedin</a
+                      >
+                      <!-- Snapchat -->
+                      <a
+                        href="https://www.snapchat.com/add/rickenstein"
+                        target="_blank"
+                        class="snapchat-hover-effect"
+                        ><i class="fab fa-snapchat"></i> snapchat</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="navcolumn" id="nav-column-fourth">
                       <h2>Contact</h2>
-                      <a class="cd-btn" href="#">Let's Talk</a>
+                      <!-- <a class="cd-btn" href="#">Let's Talk</a> -->
+                      <!-- Email -->
+                      <h4><i class="far fa-envelope"></i> Email Id:</h4>
+                      <p>sounakdeyrick1@gmail.com</p>
+                      <p>csounakdey@gmail.com</p>
+                      <!-- Skype -->
+                      <h4><i class="fab fa-skype"></i> Skype Id:</h4>
+                      <p>live:sounakdeyrick1</p>
                     </div>
                   </div>
                 </div>
@@ -1527,11 +1600,9 @@
         $(".close-menu").on("click", function () {
           $(".overlay").removeClass("open");
         });
-        $(".navcolumn .cd-btn").on("click", function () {
-          $(".overlay").removeClass("open");
-        });
       });
       function redirectToSection(redirectTo) {
+          $(".overlay").removeClass("open");
         document.querySelector(redirectTo).scrollIntoView({
           behavior: "smooth",
         });
