@@ -1768,6 +1768,8 @@
 
           <section class="contact-wrapper">
             <div class="contact-text">
+            <button type="button" class="btn justify-content-center" onclick="scrollToTop()">Hello</button>
+
               <h1>
                 We've landed.
                 <!-- let's <a class="cd-btn" href="#">talk</a> -->
@@ -1786,8 +1788,7 @@
 
         <!-- Main Content -->
       </div>
-      <!-- <div style="color: #00e5ea; z-index: 500; height: 100%;"></div> -->
-      <!-- <img src="img/1.jpg" alt="food" class="img-fluid"> -->
+      <!-- Loader -->
       <div class="page-loader">
         <svg
           class="svg-calLoader"
@@ -1923,6 +1924,9 @@
           behavior: "smooth",
         });
       }
+      function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
       document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(() => {
           document.querySelector(".cd-main-content").style.display = "block";
