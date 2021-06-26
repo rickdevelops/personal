@@ -862,28 +862,28 @@
       }
       .my-logo:hover,
       .support-header-img:hover,
-      .support-content-img:hover
-       {
+      .support-content-img:hover {
         box-shadow: 0 0 1rem #037f81;
       }
 
       .support-header-img {
+        aspect-ratio: 1 / 1;
         margin: 0.6rem 0px 1rem 0px;
         border-radius: 80%;
         overflow: hidden;
-        width: 80%;
+        width: 100%;
         max-width: 6rem;
         max-height: 6rem;
       }
 
       .support-content-img {
+        aspect-ratio: 1 / 1;
         margin: 14px 0px 0px 0px;
         border-radius: 80%;
         overflow: hidden;
-        width: 80%;
+        width: 100%;
         max-width: 5rem;
         max-height: 5rem;
-        
       }
 
       .cd-main-content {
@@ -1158,6 +1158,12 @@
                         onclick="redirectToSection('#hoveringDetails')"
                         >My Story</a
                       >
+                      <a
+                        href="javascript:void(0);"
+                        class="cd-btn"
+                        onclick="redirectToSection('#supportInfo')"
+                        >My supporters</a
+                      >
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-6 col-6">
@@ -1168,6 +1174,12 @@
                         href="javascript:void(0);"
                         onclick="redirectToSection('#certificateDetails')"
                         >Certificates</a
+                      >
+                      <a
+                        class="cd-btn"
+                        href="javascript:void(0);"
+                        onclick="redirectToSection('#office_works')"
+                        >Office Works</a
                       >
                       <!-- <a class="cd-btn" href="#">London Born</a>
                       <a class="cd-btn" href="#">Subaru</a>
@@ -1706,7 +1718,7 @@
           <section class="work-bg">
             <div class="container">
               <div class="work work1">
-                <div class="row d-flex align-items-center">
+                <div id="office_works" class="row d-flex align-items-center">
                   <div class="col-md-5 col-sm-6 col-12">
                     <div class="workpic">
                       <div class="big-circle-shape"></div>
@@ -1723,10 +1735,14 @@
                       <div class="worktext text-right">
                         <h3>Office <br />Works</h3>
                         <p>
-                          I have worked with on javascript with a client, where i have to make a tax calculator according to their requirement.
-                          Worked on Backend Subscription developement of the Textplicit application.
-                          Worked on Java, Springboot apllication where i involved in the backend development of the NorthLadder Website.
-                          Worked on Tableau project, where i was involved in generating reports.
+                          I have worked with on javascript with a client, where
+                          i have to make a tax calculator according to their
+                          requirement. Worked on Backend Subscription
+                          developement of the Textplicit application. Worked on
+                          Java, Springboot apllication where i involved in the
+                          backend development of the NorthLadder Website. Worked
+                          on Tableau project, where i was involved in generating
+                          reports.
                         </p>
                         <!-- <a class="cd-btn" href="">View Work</a> -->
                       </div>
@@ -1823,40 +1839,40 @@
                         alt="Dad"
                       />
                       <img
-                      src="img/mom.jpg"
-                      class="support-header-img img-fluid"
+                        src="img/mom.jpg"
+                        class="support-header-img img-fluid"
                         alt="Mom"
                       />
                     </div>
                     <div class="d-flex justify-content-around">
                       <img
-                      src="img/boro_dadu.jpg"
-                      class="support-content-img img-fluid"
+                        src="img/boro_dadu.jpg"
+                        class="support-content-img img-fluid"
                         alt="avatar"
                       />
                       <img
-                      src="img/dida_ma.jpg"
-                      class="support-content-img img-fluid"
+                        src="img/dida_ma.jpg"
+                        class="support-content-img img-fluid"
                         alt="avatar"
                       />
                       <img
-                      src="img/mejo_dadu.jpg"
-                      class="support-content-img img-fluid"
+                        src="img/mejo_dadu.jpg"
+                        class="support-content-img img-fluid"
                         alt="avatar"
                       />
                       <img
-                      src="img/choto_dadu.jpg"
-                      class="support-content-img img-fluid"
+                        src="img/choto_dadu.jpg"
+                        class="support-content-img img-fluid"
                         alt="avatar"
                       />
                       <img
-                      src="img/choto_dida.jpg"
-                      class="support-content-img img-fluid"
+                        src="img/choto_dida.jpg"
+                        class="support-content-img img-fluid"
                         alt="avatar"
                       />
                       <img
-                      src="img/pisi.jpg"
-                      class="support-content-img img-fluid"
+                        src="img/pisi.jpg"
+                        class="support-content-img img-fluid"
                         alt="avatar"
                       />
                     </div>
@@ -1869,9 +1885,10 @@
                     Website Design..
                   </p> -->
                     <p>
-                      These are some of the many supports whom i was able to mention
+                      These are some of the many supports, whom i was able to
+                      mention
                     </p>
-                    <p style="color: #00e5ea;">Thank You!</p>
+                    <p style="color: #00e5ea">Thank You!</p>
                   </div>
                 </div>
               </div>
