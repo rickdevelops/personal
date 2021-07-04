@@ -932,11 +932,11 @@
           </section>
 
           <!-- Contact Info -->
-          <section id="contactInfo" class="about-section">
+          <section class="about-section">
             <div class="container-fluid px-sm-0 p-0">
               <div class="row d-flex justify-content-center">
                 <div class="col-md-8">
-                  <div class="abouttext">
+                  <div id="contactInfo" class="abouttext">
                     <h2>Contact Me</h2>
                     <form
                       onsubmit="return validateContactForm()"
@@ -998,7 +998,7 @@
                     <div class="form-submit-button">
                       <span class="validation_error" id="submit_error"></span>
                       <button
-                        class="btn btn-success"
+                        class="btn"
                         onclick="validateContactForm()"
                         type="submit"
                         name="submit"
