@@ -956,7 +956,7 @@ a:hover {
 }
 
 .validation_error {
-  color: white;
+  color: red;
 }
 
 .cd-main-content {
