@@ -939,11 +939,25 @@ a:hover {
 
 .form-rows label {
   width: 10rem;
+  color: #eee;
   /* padding: 0 0 0 2rem; */
+}
+.form-rows label sup {
+  color: red;
 }
 /* .form-rows input {
   margin: 0 2rem 0 2rem;
 } */
+
+.form-submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.validation_error {
+  color: white;
+}
 
 .cd-main-content {
   opacity: 0;

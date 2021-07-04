@@ -204,7 +204,7 @@
                         href="#contactInfo"
                         class="cd-btn"
                         onclick="redirectToSection('#contactInfo')"
-                        >Contact Me!</a
+                        >Contact me</a
                       >
                     </div>
                   </div>
@@ -949,64 +949,81 @@
                     <h2>Contact Me!</h2>
                     <form
                       form
-                      method="post"
+                      onsubmit="return validateContactForm()"
                       autocomplete="off"
                       name="google-sheet"
                     >
                       <div class="form-group form-rows">
-                        <label
-                          for="Name"
-                          style="color: rgb(247, 214, 214); margin-right: 1rem"
-                          >Name:</label
-                        ><input type="text" name="Name" class="form-control" />
+                        <label for="Name">Name: <sup>*</sup></label
+                        ><input
+                          type="text"
+                          name="Name"
+                          id="input_name"
+                          placeholder="john doe"
+                          class="form-control"
+                        />
                       </div>
+                      <span class="validation_error" id="name_error"></span>
                       <div class="form-rows">
-                        <label
-                          for="Email"
-                          style="color: rgb(247, 214, 214); margin-right: 1rem"
-                          >Email Id:</label
-                        ><input type="text" name="Email" class="form-control" />
+                        <label for="Email">Email Id: <sup>*</sup></label
+                        ><input
+                          type="text"
+                          name="Email"
+                          id="input_email"
+                          placeholder="abcd@abcd.com"
+                          class="form-control"
+                        />
                       </div>
+                      <span class="validation_error" id="email_error"></span>
                       <div class="form-rows">
-                        <label
-                          for="Phone"
-                          style="color: rgb(247, 214, 214); margin-right: 1rem"
-                          >Phone No:</label
-                        ><input type="text" name="Phone" class="form-control" />
+                        <label for="Phone">Phone No: <sup>*</sup></label
+                        ><input
+                          type="text"
+                          name="Phone"
+                          id="input_phone"
+                          placeholder="919812345678"
+                          class="form-control"
+                        />
                       </div>
+                      <span class="validation_error" id="phone_error"></span>
                       <div
                         style="vertical-align: middle; display: inline-flex"
                         class="form-rows"
                       >
-                        <label
-                          for="Message"
-                          style="color: rgb(247, 214, 214); margin-right: 1rem"
-                          >Message:</label
+                        <label for="Message">Message: <sup>*</sup></label
                         ><textarea
                           name="Message"
                           rows="4"
                           cols="50"
+                          id="input_message"
+                          placeholder="write your valuable comments..."
                           class="form-control"
                         ></textarea>
                       </div>
+                      <span
+                        class="validation_error d-flex justify-content-center"
+                        id="message_error"
+                      ></span>
                     </form>
-                    <div class="form-rows">
+                    <div class="form-submit-button">
+                      <span class="validation_error" id="submit_error"></span>
                       <button
                         class="btn btn-success"
-                        onclick="submitContactForm()"
+                        onclick="validateContactForm()"
                         type="submit"
                         name="submit"
                         value="submit"
+                        id="submit_button"
                       >
                         Submit
                       </button>
                     </div>
                     <p
-                      style="color: #00e5ea; visibility: hidden"
+                      style="color: #00e5ea; display: none"
                       class="form-rows"
                       id="form_row_thank_you"
                     >
-                      Thank You!
+                      Thank You! Your form has been submitted successfully!
                     </p>
                   </div>
                 </div>
@@ -1206,17 +1223,59 @@
           document.querySelector(".page-loader").style.height = "0";
         }, 500);
       });
+      async function validateContactForm() {
+        let name = document.querySelector("#input_name").value;
+        let email = document.querySelector("#input_email").value;
+        let phone = document.querySelector("#input_phone").value;
+        let message = document.querySelector("#input_message").value;
+        let name_regex = /^[a-z ,.'-]+$/i;
+        let email_regex =
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        let phone_regex = /^\d{12}$/;
+        let message_validation = message.length > 5 ? true : false;
+        console.log(name_regex.test(name));
+
+        if (!name_regex.test(name)) {
+          document.querySelector("#name_error").innerHTML =
+            "Please enter a valid name";
+        } else if (!email_regex.test(email)) {
+          document.querySelector("#email_error").innerHTML =
+            "Please enter a valid email";
+        } else if (!phone_regex.test(phone)) {
+          document.querySelector("#phone_error").innerHTML =
+            "Please enter a valid phone";
+        } else if (!message_validation) {
+          document.querySelector("#message_error").innerHTML =
+            "Please enter a valid message";
+        } else if (
+          name_regex.test(name) &&
+          email_regex.test(email) &&
+          phone_regex.test(phone) &&
+          message_validation
+        ) {
+          await submitContactForm();
+        }
+      }
       function submitContactForm() {
         const scriptURL =
           "https://script.google.com/macros/s/AKfycbwqmWMAJuU8tB9K-79rbh3DGjOo3YM6SiRGWyTE7YVygyZdLLQPG6zov1ddhWTWhcUn/exec";
         const form = document.forms["google-sheet"];
-        console.log(form);
+        document.querySelector("#submit_button").disabled = true;
+        document.querySelector("#submit_button").innerHTML = "Submiting...";
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => alert("You have successfully submitted."))
-          .catch((error) => console.error("Error!", error.message));
-
-        document.querySelector("#form_row_thank_you").style.visibility =
-          "visible";
+          .then((response) => {
+            document.querySelector("#form_row_thank_you").style.display =
+              "block";
+            form.style.display = "none";
+            document.querySelector("#submit_button").style.display = "none";
+          })
+          .catch((error) => {
+            document.querySelector("#submit_error").innerHTML =
+              "Some error occurred. Please try again later!";
+            document.querySelector("#submit_button").disabled = false;
+            document.querySelector("#submit_button").innerHTML = "Submit";
+            console.error("Error!", error.message);
+          });
       }
     </script>
   </body>
