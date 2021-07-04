@@ -200,6 +200,12 @@
                         onclick="redirectToSection('#supportInfo')"
                         >My supporters</a
                       >
+                      <a
+                        href="#contactInfo"
+                        class="cd-btn"
+                        onclick="redirectToSection('#contactInfo')"
+                        >Contact me</a
+                      >
                     </div>
                   </div>
                   <div class="col-md-3 col-sm-6 col-6">
@@ -784,7 +790,7 @@
                 </div>
               </div>
 
-              <!-- <div class="work work2">
+              <div class="work work2">
                 <div class="row d-flex align-items-center">
                   <div
                     class="col-md-5 offset-md-1 col-sm-12 offset-sm-0"
@@ -792,16 +798,19 @@
                   >
                     <div class="workintro">
                       <div class="worktext">
-                        <h3>Subaru</h3>
+                        <h3>My works</h3>
+                        <a
+                          class="cd-btn"
+                          href="https://rickdevelops.github.io/tictactoe/"
+                        >
+                          Tic-Tac-Toe
+                        </a>
                         <p>
-                          Aure Wines needed to improve their presence in the
-                          Ontario wine market. And considering the roots of
-                          their family-owned winery reached back to Britain,
-                          soon the London Born Wine Company was, well, born. As
-                          part of the bold rebrand, a strong online presence was
-                          needed.
+                          You can play it by yourself, with friends or with the
+                          Computer (Based on Random Technique). It keeps tracks
+                          about the winner of the game and decides the winner
+                          when you reset the game.
                         </p>
-                        <a class="cd-btn" href="">View Work</a>
                       </div>
                     </div>
                   </div>
@@ -816,7 +825,7 @@
                     </div>
                   </div>
                 </div>
-              </div> -->
+              </div>
 
               <!-- <div class="work work3">
                 <div class="row d-flex align-items-center">
@@ -926,6 +935,106 @@
                 </div>
               </div>
             </div>
+            <div class="workclose">
+            <img
+              src="img/wavy2.png"
+              class="img-fluid"
+              alt="wavy2"
+              style="-webkit-transform: scaleX(-1); transform: scaleX(-1)"
+            />
+          </section>
+
+          <!-- Contact Info -->
+          <section id="contactInfo" class="about-section">
+            <div class="container-fluid px-sm-0 p-0">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                  <div class="abouttext">
+                    <h2>Contact Me!</h2>
+                    <form
+                      form
+                      onsubmit="return validateContactForm()"
+                      autocomplete="off"
+                      name="google-sheet"
+                    >
+                      <div class="form-group form-rows">
+                        <label for="Name">Name: <sup>*</sup></label
+                        ><input
+                          type="text"
+                          name="Name"
+                          id="input_name"
+                          placeholder="john doe"
+                          class="form-control"
+                        />
+                      </div>
+                      <span class="validation_error" id="name_error"></span>
+                      <div class="form-rows">
+                        <label for="Email">Email Id: <sup>*</sup></label
+                        ><input
+                          type="text"
+                          name="Email"
+                          id="input_email"
+                          placeholder="abcd@abcd.com"
+                          class="form-control"
+                        />
+                      </div>
+                      <span class="validation_error" id="email_error"></span>
+                      <div class="form-rows">
+                        <label for="Phone">Phone No: <sup>*</sup></label
+                        ><input
+                          type="text"
+                          name="Phone"
+                          id="input_phone"
+                          placeholder="919812345678"
+                          class="form-control"
+                        />
+                      </div>
+                      <span class="validation_error" id="phone_error"></span>
+                      <div
+                        style="vertical-align: middle; display: inline-flex"
+                        class="form-rows"
+                      >
+                        <label for="Message">Message: <sup>*</sup></label
+                        ><textarea
+                          name="Message"
+                          rows="4"
+                          cols="50"
+                          id="input_message"
+                          placeholder="write your valuable comments..."
+                          class="form-control"
+                        ></textarea>
+                      </div>
+                      <span
+                        class="validation_error d-flex justify-content-center"
+                        id="message_error"
+                      ></span>
+                    </form>
+                    <div class="form-submit-button">
+                      <span class="validation_error" id="submit_error"></span>
+                      <button
+                        class="btn btn-success"
+                        onclick="validateContactForm()"
+                        type="submit"
+                        name="submit"
+                        value="submit"
+                        id="submit_button"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                    <p
+                      style="color: #00e5ea; display: none"
+                      class="form-rows"
+                      id="form_row_thank_you"
+                    >
+                      Thank You! Your valuable message has been submitted
+                      successfully!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+             </div>
             <div class="workclose">
               <img src="img/wavy.png" class="img-fluid" alt="wavy3" />
             </div>
@@ -1118,8 +1227,62 @@
           document.querySelector(".cd-main-content").style.display = "block";
           document.querySelector(".cd-main-content").classList.add("loaded");
           document.querySelector(".page-loader").style.height = "0";
-        }, 2000);
+        }, 500);
       });
+      async function validateContactForm() {
+        let name = document.querySelector("#input_name").value;
+        let email = document.querySelector("#input_email").value;
+        let phone = document.querySelector("#input_phone").value;
+        let message = document.querySelector("#input_message").value;
+        let name_regex = /^[a-z ,.'-]+$/i;
+        let email_regex =
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        let phone_regex = /^\d{12}$/;
+        let message_validation = message.length > 5 ? true : false;
+        console.log(name_regex.test(name));
+
+        if (!name_regex.test(name)) {
+          document.querySelector("#name_error").innerHTML =
+            "Please enter a valid name";
+        } else if (!email_regex.test(email)) {
+          document.querySelector("#email_error").innerHTML =
+            "Please enter a valid email";
+        } else if (!phone_regex.test(phone)) {
+          document.querySelector("#phone_error").innerHTML =
+            "Please enter a valid phone";
+        } else if (!message_validation) {
+          document.querySelector("#message_error").innerHTML =
+            "Please enter a valid message";
+        } else if (
+          name_regex.test(name) &&
+          email_regex.test(email) &&
+          phone_regex.test(phone) &&
+          message_validation
+        ) {
+          await submitContactForm();
+        }
+      }
+      function submitContactForm() {
+        const scriptURL =
+          "https://script.google.com/macros/s/AKfycbwqmWMAJuU8tB9K-79rbh3DGjOo3YM6SiRGWyTE7YVygyZdLLQPG6zov1ddhWTWhcUn/exec";
+        const form = document.forms["google-sheet"];
+        document.querySelector("#submit_button").disabled = true;
+        document.querySelector("#submit_button").innerHTML = "Submiting...";
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            document.querySelector("#form_row_thank_you").style.display =
+              "block";
+            form.style.display = "none";
+            document.querySelector("#submit_button").style.display = "none";
+          })
+          .catch((error) => {
+            document.querySelector("#submit_error").innerHTML =
+              "Some error occurred. Please try again later!";
+            document.querySelector("#submit_button").disabled = false;
+            document.querySelector("#submit_button").innerHTML = "Submit";
+            console.error("Error!", error.message);
+          });
+      }
     </script>
   </body>
 </html>
