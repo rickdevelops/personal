@@ -954,6 +954,12 @@ a:hover {
   justify-content: center;
   margin-top: 2rem;
 }
+.form-submit-button button {
+  background-color: #00e5ea;
+}
+.form-submit-button button:hover {
+  box-shadow: 0 0 2rem 0 #000;
+}
 
 .validation_error {
   color: red;
