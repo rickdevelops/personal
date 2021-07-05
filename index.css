@@ -955,6 +955,7 @@ a:hover {
   margin-top: 2rem;
 }
 .form-submit-button button {
+  color: white;
   background-color: #00e5ea;
 }
 .form-submit-button button:hover {
